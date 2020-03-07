@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Killer
+{% endblock title %}
+
+{% block content %}
+<h1 class="blink_text">You are the killer</h1>
+<p>Who would you like to kill?</p>
+<form action="." method="post" enctype="multipart/form-data">
+    {{ killer_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Submit"></p>
+</form>
+{% endblock content %}
